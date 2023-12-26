@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.error-message {
+  color: red;
+  padding: 20px;
+}

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <app-zipcode-entry (add)="addLocation($event)"> </app-zipcode-entry>
+
+  <app-tabs>
+    @for (item of currentConditionsByZip(); track item.zip) {
+    <app-tab>
+      <app-tab-header>
+        {{ item.data?.name }} {{ item.zip }}
+
+        <button
+          class="btn btn-danger btn-xs"
+          (click)="removeLocation(item.zip)"
+        >
+          remove
+        </button>
+      </app-tab-header>
+      <app-current-condition [condition]="item"></app-current-condition>
+    </app-tab>
+    }
+  </app-tabs>
+</div>

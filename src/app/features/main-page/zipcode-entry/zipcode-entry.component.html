@@ -1,0 +1,14 @@
+<div class="well">
+  <h2>Enter a zipcode:</h2>
+  <input
+    type="text"
+    [formControl]="input"
+    placeholder="Zipcode"
+    class="form-control"
+  />
+  <div class="error" *ngIf="input.touched && input.hasError('duplicate')">
+    Location already exists
+  </div>
+  <br />
+  <button class="btn btn-primary" (click)="addLocation()">Add location</button>
+</div>

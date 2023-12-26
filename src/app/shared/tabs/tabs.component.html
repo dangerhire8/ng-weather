@@ -1,0 +1,13 @@
+<div class="tabs">
+  <div
+    *ngFor="let tab of tabs"
+    class="tabs__item"
+    [class.tabs__item--active]="tab.active"
+    (click)="selectTab(tab, $event)"
+  >
+    {{ tab.tabTitle }}
+
+    <ng-container *ngTemplateOutlet="tab.headerRef"></ng-container>
+  </div>
+</div>
+<ng-content></ng-content>

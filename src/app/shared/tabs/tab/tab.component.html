@@ -1,0 +1,6 @@
+<ng-template #header>
+  <ng-content select="app-tab-header"></ng-content>
+</ng-template>
+<div *ngIf="active">
+  <ng-content></ng-content>
+</div>
