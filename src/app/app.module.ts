@@ -5,9 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { routing } from './app.routing';
-import { LocationService } from './services/location.service';
-import { WeatherService } from './services/weather.service';
+import { appRoutes } from './app.routing';
 import { OpenweatherInterceptor } from './interseptor/openweather.interceptor';
 
 @NgModule({
@@ -15,8 +13,7 @@ import { OpenweatherInterceptor } from './interseptor/openweather.interceptor';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule,
-    routing,
+    RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('/ngsw-worker.js', {
       enabled: environment.production,
     }),

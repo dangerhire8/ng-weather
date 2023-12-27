@@ -4,7 +4,7 @@ import { forecastsListResolver } from './features/forecasts-list/forecasts-list.
 import { MainPageComponent } from './features/main-page/main-page.component';
 import { ForecastsListComponent } from './features/forecasts-list/forecasts-list.component';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   {
     path: '',
     component: MainPageComponent,
@@ -17,7 +17,3 @@ const appRoutes: Routes = [
     },
   },
 ];
-export const routing: ModuleWithProviders<any> = RouterModule.forRoot(
-  appRoutes,
-  {}
-);

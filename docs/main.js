@@ -88,7 +88,7 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
 let AppModule = class AppModule {};
 AppModule = __decorate([(0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
   declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent],
-  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.BrowserModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClientModule, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule, _app_routing__WEBPACK_IMPORTED_MODULE_2__.routing, _angular_service_worker__WEBPACK_IMPORTED_MODULE_8__.ServiceWorkerModule.register('/ngsw-worker.js', {
+  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.BrowserModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClientModule, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule.forRoot(_app_routing__WEBPACK_IMPORTED_MODULE_2__.appRoutes), _angular_service_worker__WEBPACK_IMPORTED_MODULE_8__.ServiceWorkerModule.register('/ngsw-worker.js', {
     enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.production
   })],
   bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent],
@@ -111,13 +111,11 @@ AppModule = __decorate([(0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)(
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   routing: () => (/* binding */ routing)
+/* harmony export */   appRoutes: () => (/* binding */ appRoutes)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 7947);
 /* harmony import */ var _features_forecasts_list_forecasts_list_resolver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./features/forecasts-list/forecasts-list.resolver */ 9193);
 /* harmony import */ var _features_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./features/main-page/main-page.component */ 5259);
 /* harmony import */ var _features_forecasts_list_forecasts_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./features/forecasts-list/forecasts-list.component */ 5563);
-
 
 
 
@@ -131,7 +129,6 @@ const appRoutes = [{
     forecast: _features_forecasts_list_forecasts_list_resolver__WEBPACK_IMPORTED_MODULE_0__.forecastsListResolver
   }
 }];
-const routing = _angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule.forRoot(appRoutes, {});
 
 /***/ }),
 
