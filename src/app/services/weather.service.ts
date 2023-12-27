@@ -2,7 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, Signal, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Observable, forkJoin, of } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import {
+  catchError,
+  defaultIfEmpty,
+  map,
+  switchMap,
+  tap,
+} from 'rxjs/operators';
 import { ConditionsAndZip } from '../types/conditions-and-zip.type';
 import { CurrentConditions } from '../types/current-conditions.type';
 import { Forecast } from '../types/forecast.type';
@@ -24,7 +30,9 @@ export class WeatherService {
   currentConditions: Signal<ConditionsAndZip[]> = toSignal(
     this.locationService.locations$.pipe(
       switchMap((locations) =>
-        forkJoin(locations.map((loc) => this.getCurrentConditions(loc)))
+        forkJoin(locations.map((loc) => this.getCurrentConditions(loc))).pipe(
+          defaultIfEmpty([])
+        )
       )
     )
   );
