@@ -886,6 +886,9 @@ const environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBaseUrl: () => (/* binding */ getBaseUrl)
+/* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 1699);
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ 4737);
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/app.module */ 8629);
@@ -894,10 +897,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+function getBaseUrl() {
+  return document.getElementsByTagName('base')[0].href;
+}
+const providers = [{
+  provide: 'BASE_URL',
+  useFactory: getBaseUrl,
+  deps: []
+}];
 if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.production) {
   (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.enableProdMode)();
 }
-(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__.platformBrowserDynamic)().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule);
+(0,_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__.platformBrowserDynamic)(providers).bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_0__.AppModule);
 
 /***/ }),
 
